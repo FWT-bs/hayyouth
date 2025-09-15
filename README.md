@@ -2,14 +2,7 @@
 
 A modern, responsive multi-page website for HAY Youth non-profit organization with animations and mobile-friendly design.
 
-## Features
 
-✅ **Multi-page website** with Home, Our Team, Events, and Donate pages
-✅ **Sticky navigation bar** with smooth dropdown menu
-✅ **Mobile-responsive design** with hamburger menu
-✅ **Smooth animations** and scroll effects
-✅ **Modern UI/UX** with professional styling
-✅ **Easy to modify** content and information
 
 ## Pages
 
