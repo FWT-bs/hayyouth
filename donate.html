@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - HAY Youth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="HAY Youth Logo" class="logo">
+                <span class="logo-text">HAY Youth</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="team.html" class="nav-link">Our Team</a>
+                <div class="nav-dropdown">
+                    <a href="events.html" class="nav-link dropdown-trigger">
+                        Events <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="events.html#upcoming">Upcoming Events</a>
+                        <a href="events.html#workshops">Workshops</a>
+                        <a href="events.html#community">Community Outreach</a>
+                        <a href="events.html#volunteer">Volunteer Opportunities</a>
+                    </div>
+                </div>
+                <a href="donate.html" class="nav-link donate-btn active">Donate</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header donate-header">
+        <div class="container">
+            <div class="header-content fade-in">
+                <h1>Support Our Mission</h1>
+                <p>Your donation helps us empower youth and build stronger communities. Every contribution makes a difference in a young person's life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-showcase">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Your Impact in Action</h2>
+                <p>See how your donations directly support our programs and change lives</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item slide-in-left">
+                    <div class="impact-amount">$25</div>
+                    <div class="impact-description">
+                        <h3>Provides School Supplies</h3>
+                        <p>Helps one student get the books, notebooks, and materials they need to succeed academically.</p>
+                    </div>
+                </div>
+
+                <div class="impact-item slide-in-up">
+                    <div class="impact-amount">$50</div>
+                    <div class="impact-description">
+                        <h3>Funds a Workshop</h3>
+                        <p>Covers the cost of materials and instruction for one youth to attend a skill-building workshop.</p>
+                    </div>
+                </div>
+
+                <div class="impact-item slide-in-right">
+                    <div class="impact-amount">$100</div>
+                    <div class="impact-description">
+                        <h3>Sponsors a Mentorship</h3>
+                        <p>Provides one month of one-on-one mentoring support for a youth in our program.</p>
+                    </div>
+                </div>
+
+                <div class="impact-item slide-in-left">
+                    <div class="impact-amount">$250</div>
+                    <div class="impact-description">
+                        <h3>Supports Program Activities</h3>
+                        <p>Funds recreational activities, field trips, and enrichment programs for multiple youth.</p>
+                    </div>
+                </div>
+
+                <div class="impact-item slide-in-up">
+                    <div class="impact-amount">$500</div>
+                    <div class="impact-description">
+                        <h3>Technology Access</h3>
+                        <p>Provides computer access and digital literacy training for underserved youth.</p>
+                    </div>
+                </div>
+
+                <div class="impact-item slide-in-right">
+                    <div class="impact-amount">$1,000</div>
+                    <div class="impact-description">
+                        <h3>Full Program Scholarship</h3>
+                        <p>Sponsors a full year of programming for one youth, including all activities and support services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form -->
+    <section class="donation-section">
+        <div class="container">
+            <div class="donation-container">
+                <div class="donation-form-wrapper fade-in">
+                    <h2>Make a Donation</h2>
+                    <p>Choose your donation amount and help us continue our important work</p>
+                    
+                    <form class="donation-form" id="donation-form">
+                        <div class="donation-amounts">
+                            <input type="radio" id="amount-25" name="amount" value="25">
+                            <label for="amount-25" class="amount-btn">$25</label>
+                            
+                            <input type="radio" id="amount-50" name="amount" value="50">
+                            <label for="amount-50" class="amount-btn">$50</label>
+                            
+                            <input type="radio" id="amount-100" name="amount" value="100" checked>
+                            <label for="amount-100" class="amount-btn">$100</label>
+                            
+                            <input type="radio" id="amount-250" name="amount" value="250">
+                            <label for="amount-250" class="amount-btn">$250</label>
+                            
+                            <input type="radio" id="amount-custom" name="amount" value="custom">
+                            <label for="amount-custom" class="amount-btn">Custom</label>
+                        </div>
+
+                        <div class="custom-amount" id="custom-amount" style="display: none;">
+                            <label for="custom-input">Enter Amount:</label>
+                            <input type="number" id="custom-input" placeholder="Enter amount" min="1">
+                        </div>
+
+                        <div class="donation-frequency">
+                            <h3>Donation Frequency</h3>
+                            <div class="frequency-options">
+                                <input type="radio" id="one-time" name="frequency" value="one-time" checked>
+                                <label for="one-time" class="frequency-btn">One-time</label>
+                                
+                                <input type="radio" id="monthly" name="frequency" value="monthly">
+                                <label for="monthly" class="frequency-btn">Monthly</label>
+                                
+                                <input type="radio" id="annually" name="frequency" value="annually">
+                                <label for="annually" class="frequency-btn">Annually</label>
+                            </div>
+                        </div>
+
+                        <div class="donor-info">
+                            <h3>Your Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter" class="checkbox-label">Subscribe to our newsletter for updates</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="checkbox" id="anonymous" name="anonymous">
+                                <label for="anonymous" class="checkbox-label">Make this donation anonymous</label>
+                            </div>
+                        </div>
+
+                        <div class="payment-info">
+                            <h3>Payment Information</h3>
+                            <p class="payment-note">
+                                <i class="fas fa-lock"></i>
+                                Your payment information is secure and encrypted
+                            </p>
+                            
+                            <div class="form-group">
+                                <label for="card-number">Card Number *</label>
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date *</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billing-address">Billing Address *</label>
+                                <input type="text" id="billing-address" name="billing-address" placeholder="123 Main Street" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <input type="text" id="state" name="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code *</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="donation-summary">
+                            <h3>Donation Summary</h3>
+                            <div class="summary-row">
+                                <span>Amount:</span>
+                                <span id="summary-amount">$100.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Frequency:</span>
+                                <span id="summary-frequency">One-time</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="summary-total">$100.00</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary donate-submit">
+                            <i class="fas fa-heart"></i>
+                            Complete Donation
+                        </button>
+                        
+                        <p class="terms-text">
+                            By clicking "Complete Donation", you agree to our 
+                            <a href="#terms">Terms of Service</a> and 
+                            <a href="#privacy">Privacy Policy</a>. 
+                            Your donation is tax-deductible to the extent allowed by law.
+                        </p>
+                    </form>
+                </div>
+                
+                <div class="donation-sidebar fade-in">
+                    <div class="sidebar-card">
+                        <h3>Why Donate?</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Direct impact on youth development</li>
+                            <li><i class="fas fa-check"></i> Tax-deductible contribution</li>
+                            <li><i class="fas fa-check"></i> Regular updates on your impact</li>
+                            <li><i class="fas fa-check"></i> Community of like-minded supporters</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3>Other Ways to Give</h3>
+                        <div class="giving-options">
+                            <a href="#corporate" class="giving-option">
+                                <i class="fas fa-building"></i>
+                                <span>Corporate Sponsorship</span>
+                            </a>
+                            <a href="#planned" class="giving-option">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Planned Giving</span>
+                            </a>
+                            <a href="#memorial" class="giving-option">
+                                <i class="fas fa-heart"></i>
+                                <span>Memorial Gifts</span>
+                            </a>
+                            <a href="#events.html#volunteer" class="giving-option">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Volunteer Time</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3>Questions?</h3>
+                        <p>Need help with your donation or want to learn more about our programs?</p>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Success Stories</h2>
+                <p>See how your donations have transformed lives and strengthened our community</p>
+            </div>
+            
+            <div class="stories-grid">
+                <div class="story-card slide-in-left">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop&crop=face" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <h3>"HAY Youth Changed My Life"</h3>
+                        <p>"Thanks to the mentorship program, I graduated high school with honors and received a full scholarship to college. The support I received helped me believe in myself and my future."</p>
+                        <div class="story-author">
+                            <strong>Maria, Age 18</strong>
+                            <span>Program Graduate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card slide-in-up">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <h3>"Found My Passion Through Technology"</h3>
+                        <p>"The coding bootcamp opened up a whole new world for me. I now work as a junior developer and volunteer to teach other kids programming skills."</p>
+                        <div class="story-author">
+                            <strong>James, Age 20</strong>
+                            <span>Former Participant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-card slide-in-right">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop&crop=face" alt="Success Story">
+                    </div>
+                    <div class="story-content">
+                        <h3>"Building Confidence and Leadership"</h3>
+                        <p>"Through the leadership development program, I learned to speak up for myself and others. I'm now student body president and planning to study social work."</p>
+                        <div class="story-author">
+                            <strong>Aisha, Age 17</strong>
+                            <span>Current Participant</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HAY Youth</h3>
+                    <p>Empowering youth through education, mentorship, and community engagement.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="index.html#performance">Performance Arts</a></li>
+                        <li><a href="index.html#arts">Creative Arts</a></li>
+                        <li><a href="index.html#academics">Academic Excellence</a></li>
+                        <li><a href="index.html#leadership">Leadership Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="events.html#volunteer">Volunteer</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#transparency">Transparency</a></li>
+                        <li><a href="#reports">Annual Reports</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HAY Youth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Donation form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const amountInputs = document.querySelectorAll('input[name="amount"]');
+            const customAmountDiv = document.getElementById('custom-amount');
+            const customInput = document.getElementById('custom-input');
+            const frequencyInputs = document.querySelectorAll('input[name="frequency"]');
+            const summaryAmount = document.getElementById('summary-amount');
+            const summaryFrequency = document.getElementById('summary-frequency');
+            const summaryTotal = document.getElementById('summary-total');
+
+            // Handle amount selection
+            amountInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.value === 'custom') {
+                        customAmountDiv.style.display = 'block';
+                        customInput.focus();
+                    } else {
+                        customAmountDiv.style.display = 'none';
+                        updateSummary();
+                    }
+                });
+            });
+
+            // Handle custom amount input
+            customInput.addEventListener('input', updateSummary);
+
+            // Handle frequency selection
+            frequencyInputs.forEach(input => {
+                input.addEventListener('change', updateSummary);
+            });
+
+            // Update donation summary
+            function updateSummary() {
+                const selectedAmount = document.querySelector('input[name="amount"]:checked');
+                const selectedFrequency = document.querySelector('input[name="frequency"]:checked');
+                
+                let amount = 0;
+                if (selectedAmount.value === 'custom') {
+                    amount = parseFloat(customInput.value) || 0;
+                } else {
+                    amount = parseFloat(selectedAmount.value);
+                }
+
+                const frequency = selectedFrequency.value;
+                
+                summaryAmount.textContent = `$${amount.toFixed(2)}`;
+                summaryFrequency.textContent = frequency.charAt(0).toUpperCase() + frequency.slice(1);
+                summaryTotal.textContent = `$${amount.toFixed(2)}`;
+            }
+
+            // Form submission
+            const donationForm = document.getElementById('donation-form');
+            donationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const requiredFields = donationForm.querySelectorAll('input[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('error');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+
+                if (isValid) {
+                    // Simulate form submission
+                    const submitBtn = donationForm.querySelector('.donate-submit');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('Thank you for your donation! You will receive a confirmation email shortly.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        donationForm.reset();
+                        updateSummary();
+                    }, 2000);
+                }
+            });
+
+            // Initialize summary
+            updateSummary();
+        });
+    </script>
+</body>
+</html>
