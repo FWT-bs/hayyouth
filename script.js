@@ -328,6 +328,58 @@ function addPageTransitions() {
 // Initialize page transitions
 addPageTransitions();
 
+// Contact form functionality
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = contactForm.querySelectorAll('input[required], textarea[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = contactForm.querySelector('.contact-submit');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for your message! We will get back to you within 24 hours.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    contactForm.reset();
+                }, 2000);
+            }
+        });
+    }
+}
+
+// Initialize contact form when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all existing functionality
+    initNavigation();
+    initAnimations();
+    initTabs();
+    initCounters();
+    initScrollEffects();
+    
+    // Initialize new contact form functionality
+    initContactForm();
+});
+
 // Add touch gestures for mobile
 let touchStartX = 0;
 let touchEndX = 0;
