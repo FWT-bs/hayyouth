@@ -28,10 +28,39 @@ body {
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(149, 213, 178, 0.18);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(149, 213, 178, 0.25);
+    padding: 0.8rem 0;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 40px rgba(149, 213, 178, 0.25);
+    transform: translateY(0);
+    padding: 0.5rem 0;
+    border-radius: 0 0 20px 20px;
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+}
+
+.navbar.scrolled .logo {
+    height: 32px;
+}
+
+.navbar.scrolled .logo-text {
+    font-size: 1.3rem;
+}
+
+.navbar.scrolled .nav-link {
+    font-size: 0.9rem;
+}
+
+.navbar.scrolled .donate-btn {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
 }
 
 .nav-container {
@@ -57,7 +86,8 @@ body {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #52a085;
+    transition: all 0.3s ease;
 }
 
 .nav-menu {
@@ -75,7 +105,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #52a085;
 }
 
 .nav-link::after {
@@ -85,7 +115,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #2563eb;
+    background: linear-gradient(90deg, #95d5b2, #74c0a8);
     transition: width 0.3s ease;
 }
 
@@ -94,16 +124,18 @@ body {
 }
 
 .donate-btn {
-    background: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white !important;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(149, 213, 178, 0.4);
 }
 
 .donate-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #82c9a5, #67b59b);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.5);
 }
 
 .donate-btn::after {
@@ -182,7 +214,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #95d5b2 0%, #74c0a8 50%, #ffb885 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,13 +349,15 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(149, 213, 178, 0.4);
 }
 
 .btn-primary:hover {
+    background: linear-gradient(135deg, #82c9a5, #67b59b);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(149, 213, 178, 0.5);
 }
 
 .btn-secondary {
@@ -334,20 +368,23 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #2563eb;
+    color: #52a085;
     transform: translateY(-3px);
 }
 
 .btn-outline {
     background: transparent;
-    color: #2563eb;
-    border: 2px solid #2563eb;
+    color: #52a085;
+    border: 2px solid #95d5b2;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-outline:hover {
-    background: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
 }
 
 .hero-benefits {
@@ -395,9 +432,10 @@ body {
 }
 
 .social-icon:hover {
-    background: white;
-    color: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
+    color: white;
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(149, 213, 178, 0.4);
 }
 
 /* Animations */
@@ -507,7 +545,7 @@ body {
 .community-service h3 {
     font-size: 2rem;
     font-weight: 600;
-    color: #2563eb;
+    color: #52a085;
     margin-bottom: 1.5rem;
 }
 
@@ -530,21 +568,39 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1.5rem;
-    background: #f8fafc;
+    background: #f2fcf8;
     border-radius: 15px;
     transition: all 0.3s ease;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #95d5b2;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(149, 213, 178, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-item:hover::before {
+    left: 100%;
 }
 
 .service-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 10px 30px rgba(149, 213, 178, 0.3);
+    border-left-color: #74c0a8;
 }
 
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -552,6 +608,13 @@ body {
     color: white;
     font-size: 1.5rem;
     flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(149, 213, 178, 0.5);
 }
 
 .service-text h4 {
@@ -569,7 +632,7 @@ body {
 /* Features Section */
 .features {
     padding: 5rem 0;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #f0f9ff 0%, #f8fffe 50%, #fefdf8 100%);
 }
 
 .section-header {
@@ -612,11 +675,11 @@ body {
 
 .tab-btn.active,
 .tab-btn:hover {
-    background: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
-    border-color: #2563eb;
+    border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 5px 20px rgba(149, 213, 178, 0.5);
 }
 
 .tab-content {
@@ -674,7 +737,7 @@ body {
 .feature-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -682,6 +745,7 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 2rem;
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
 }
 
 .feature-card h3 {
@@ -712,10 +776,11 @@ body {
 .stat-card {
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
     border-radius: 15px;
     transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(149, 213, 178, 0.4);
 }
 
 .stat-card:hover {
@@ -870,8 +935,8 @@ body {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
     margin-top: 3rem;
 }
 
@@ -896,7 +961,7 @@ body {
 
 .team-image img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -1199,10 +1264,11 @@ body {
 
 .workshop-tab.active,
 .workshop-tab:hover {
-    background: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
-    border-color: #2563eb;
+    border-color: transparent;
     transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(149, 213, 178, 0.5);
 }
 
 .workshop-pane {
@@ -1863,7 +1929,7 @@ body {
 /* Contact Section */
 .contact-section {
     padding: 5rem 0;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #f8fffe 0%, #f0f9ff 50%, #fdf4ff 100%);
 }
 
 .contact-content {
@@ -1896,7 +1962,7 @@ body {
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1904,6 +1970,13 @@ body {
     margin: 0 auto 1rem;
     color: white;
     font-size: 1.5rem;
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(149, 213, 178, 0.5);
 }
 
 .contact-card h3 {
@@ -1941,7 +2014,7 @@ body {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: 600;
-    background: #2563eb;
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
     border: none;
     border-radius: 10px;
@@ -1951,16 +2024,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(149, 213, 178, 0.4);
 }
 
 .contact-submit:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #82c9a5, #67b59b);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.5);
 }
 
 /* Youth Volunteer Page Styles */
 .volunteer-header {
-    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    background: linear-gradient(135deg, #b19cd9 0%, #a088cc 50%, #ffbdcf 100%);
 }
 
 .header-slogan {
@@ -2004,7 +2079,7 @@ body {
 .mission-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2012,6 +2087,13 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 2rem;
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover .mission-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(149, 213, 178, 0.5);
 }
 
 .mission-card h3 {
@@ -2177,7 +2259,7 @@ body {
 .benefit-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2185,6 +2267,13 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 1.5rem;
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.4);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(149, 213, 178, 0.5);
 }
 
 .benefit-item h3 {
@@ -2322,7 +2411,7 @@ body {
     padding: 1.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    background: linear-gradient(135deg, #95d5b2, #74c0a8);
     color: white;
     border: none;
     border-radius: 10px;
@@ -2332,16 +2421,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(149, 213, 178, 0.4);
 }
 
 .volunteer-submit:hover {
-    background: linear-gradient(135deg, #6d28d9, #4c1d95);
+    background: linear-gradient(135deg, #82c9a5, #67b59b);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(149, 213, 178, 0.5);
 }
 
 /* Active navigation link */
 .nav-link.active {
-    color: #2563eb;
+    color: #52a085;
 }
 
 .nav-link.active::after {
