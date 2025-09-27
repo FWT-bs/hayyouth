@@ -82,7 +82,7 @@ function initAnimations() {
 
     // Observe elements for animation
     const animateElements = document.querySelectorAll(
-        '.fade-in, .slide-in-left, .slide-in-right, .fade-in-up, .feature-card, .stat-card'
+        '.fade-in, .slide-in-left, .slide-in-right, .fade-in-up, .feature-card, .stat-card, .section-with-beam'
     );
     
     animateElements.forEach(el => observer.observe(el));
@@ -244,6 +244,14 @@ function smoothScrollTo(targetPosition, duration = 1000) {
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     
+    // Trigger hero side lasers
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        setTimeout(() => {
+            heroSection.classList.add('loaded');
+        }, 500);
+    }
+    
     // Trigger hero animations
     const heroElements = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-buttons, .hero-benefits, .social-media-row');
     heroElements.forEach((element, index) => {
@@ -367,6 +375,41 @@ function initContactForm() {
     }
 }
 
+// Team photo handling
+function initTeamPhotos() {
+    const teamImages = document.querySelectorAll('.team-photo-placeholder');
+    
+    teamImages.forEach(img => {
+        const placeholder = img.nextElementSibling;
+        
+        // Show placeholder initially
+        if (placeholder && placeholder.classList.contains('photo-placeholder')) {
+            placeholder.style.opacity = '1';
+        }
+        
+        // Hide placeholder when image loads successfully
+        img.addEventListener('load', function() {
+            if (placeholder && placeholder.classList.contains('photo-placeholder')) {
+                placeholder.style.opacity = '0';
+            }
+        });
+        
+        // Show placeholder if image fails to load
+        img.addEventListener('error', function() {
+            if (placeholder && placeholder.classList.contains('photo-placeholder')) {
+                placeholder.style.opacity = '1';
+            }
+        });
+        
+        // Check if image is already loaded (cached)
+        if (img.complete && img.naturalHeight !== 0) {
+            if (placeholder && placeholder.classList.contains('photo-placeholder')) {
+                placeholder.style.opacity = '0';
+            }
+        }
+    });
+}
+
 // Initialize contact form when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all existing functionality
@@ -378,6 +421,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize new contact form functionality
     initContactForm();
+    
+    // Initialize team photo handling
+    initTeamPhotos();
 });
 
 // Add touch gestures for mobile
