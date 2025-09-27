@@ -19,6 +19,13 @@ body {
     color: #333;
     background-color: #ffffff !important;
     overflow-x: hidden;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease;
+}
+
+body.loaded {
+    opacity: 1 !important;
+    background-color: #ffffff !important;
 }
 
 /* Inter Font Classes */

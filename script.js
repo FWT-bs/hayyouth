@@ -320,21 +320,30 @@ function addPageTransitions() {
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            // Only apply transitions to internal links, not external or same-page links
             const href = this.getAttribute('href');
+            if (href.startsWith('#') || this.getAttribute('target') === '_blank') {
+                return; // Don't prevent default for anchors or external links
+            }
             
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.3s ease';
+            e.preventDefault();
+            
+            document.body.style.opacity = '0.8';
+            document.body.style.transition = 'opacity 0.2s ease';
             
             setTimeout(() => {
                 window.location.href = href;
-            }, 300);
+            }, 200);
         });
     });
 }
 
-// Initialize page transitions
-addPageTransitions();
+// Initialize page transitions only if not on the same page
+if (document.readyState === 'complete') {
+    addPageTransitions();
+} else {
+    window.addEventListener('load', addPageTransitions);
+}
 
 // Contact form functionality
 function initContactForm() {
